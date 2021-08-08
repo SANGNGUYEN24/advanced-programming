@@ -38,7 +38,6 @@ evenUpTo100 = takeWhile (<=100) [2,4..]
 
 multOfList = foldl (*) 5 [2,3,4,5]
 
-
 mulTable = [[x * y | x <- [1..3] ]| y <- [1..3]]
 
 names = ["A","B","C"]
