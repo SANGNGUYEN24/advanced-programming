@@ -40,10 +40,55 @@ getFirstItem :: String -> String
 getFirstItem [] = "Empty list"
 getFirstItem all@(x:xs) = all ++ " ends with " ++ [x]
 
+-- Function receives a list and output a list with each element multipled by 4
 times4 :: Int -> Int
 times4 x = x * 4
 
 listTimes4 = map times4 [1,3,4]
+mulBy4 :: [Int] -> [Int] 
+mulBy4 [] = []
+-- Recursion
+mulBy4 (x:xs) = times4 x : mulBy4 xs
+
+-- Function to check two string are the same or not
+areStringEq :: String -> String -> Bool
+areStringEq [] [] = True
+areStringEq (x:xs) (y:ys) = x == y && areStringEq xs ys
+areStringEq _ _ = False
+
+-- Passing function into a function
+doMul :: (Int -> Int) -> Int
+doMul func = func 5
+num5Times4 = doMul times4
+
+-- Return a function f
+addFunc :: Int ->(Int -> Int)
+addFunc x y = x + y
+add4 = addFunc 4
+result = add4 8
+fourPlusList = map add4 [1,2,3,4,5,6,7,8,9]
+
+-- Lambdas
+double1To10 = map (\x -> x * 2) [1..10]
+
+-- Conditional statement
+doubleOnlyEvenNumber x
+    | mod x 2 == 0 = x * 2
+    | otherwise = x
+
+doubleOnlyOddNumber y = 
+    if (y `mod` 2 /= 0)
+        then y * 2
+        else y
+
+-- Switch staement
+getAge n = case n of
+    5 -> "Kindergarten"
+    6 -> "Elementary school"
+    _ -> "Something"
+    
+
+
 
 
 
