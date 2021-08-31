@@ -1,3 +1,1 @@
-# AdvancedProgramming
-This repo is used for reviewing Haskell in Advanced Programming
-Final report
+# Advanced Programming Final Report
